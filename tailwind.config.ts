@@ -2,6 +2,20 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
     darkMode: ["class"],
+    safelist: [
+      'col-span-1',
+      'col-span-2',
+      'col-span-3',
+      'col-span-4',
+      'col-span-5',
+      'col-span-6',
+      'md:col-span-1',
+      'md:col-span-2',
+      'md:col-span-3',
+      'md:col-span-4',
+      'md:col-span-5',
+      'md:col-span-6',
+    ],
     content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",

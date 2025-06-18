@@ -16,12 +16,14 @@ const projects = [
     thumbnail: "/branding/cover.png?height=600&width=800",
     images: [
       "/branding/cover.png?height=800&width=1200",
-      "/branding/cover.png?height=800&width=1200",
+      "/branding/mojo.jpeg?height=800&width=1200",
       "/branding/cover.png?height=800&width=1200",
       "/branding/cover.png?height=800&width=1200",
       "/branding/cover.png?height=800&width=1200",
       "/branding/cover.png?height=800&width=1200",
     ],
+    // Define how many columns each image should span in the gallery
+    imageSpans: [2, 4, 6, 6, 4, 2],
     description:
       "Katya comprehensive brand identity design for a local coffee shop, including logo, color palette, and brand guidelines.",
     header: "Coping with the pandemic",
@@ -43,6 +45,7 @@ const projects = [
       "/placeholder.svg?height=800&width=1200",
       "/placeholder.svg?height=800&width=1200",
     ],
+    imageSpans: [2, 3, 1],
     description:
       "Innovative packaging design for an eco-friendly cosmetics line, focusing on sustainability and visual appeal.",
     paragraphs: [
@@ -62,6 +65,7 @@ const projects = [
       "/placeholder.svg?height=800&width=1200",
       "/placeholder.svg?height=800&width=1200",
     ],
+    imageSpans: [3, 2, 1],
     description: "Editorial design for a fashion magazine, featuring custom typography and dynamic layouts.",
     paragraphs: [
         "Paragraph One",
@@ -80,6 +84,7 @@ const projects = [
       "/placeholder.svg?height=800&width=1200",
       "/placeholder.svg?height=800&width=1200",
     ],
+    imageSpans: [4, 1, 1],
     description:
       "User interface and experience design for an online clothing store, optimized for conversion and usability.",
     paragraphs: [
@@ -100,6 +105,7 @@ const projects = [
       "/placeholder.svg?height=800&width=1200",
       "/placeholder.svg?height=800&width=1200",
     ],
+    imageSpans: [2, 1, 3],
     description:
       "A series of posters designed for a music festival, featuring vibrant colors and experimental typography.",
     paragraphs: [
@@ -120,6 +126,7 @@ const projects = [
       "/placeholder.svg?height=800&width=1200",
       "/placeholder.svg?height=800&width=1200",
     ],
+    imageSpans: [3, 2, 1],
     description:
       "Mobile application design for a fitness tracking app, focusing on clean interfaces and intuitive navigation.",
     paragraphs: [
@@ -210,18 +217,26 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
 
         <div>
           {/* <h2 className="text-xl font-semibold mb-6">Project Gallery</h2> */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {project.images.map((image, index) => (
-              <div key={index} className="aspect-[4/3] relative overflow-hidden rounded-lg">
-                <Image
-                  src={image || "/placeholder.svg"}
-                  alt={`${project.title} - Image ${index + 1}`}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-              </div>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-6 gap-4">
+            {project.images.map((image, index) => {
+              // Get the column span for this image (default to 2 if not specified)
+              const colSpan = project.imageSpans?.[index] || 2;
+
+              return (
+                <div 
+                  key={index} 
+                  className={`col-span-1 md:col-span-${colSpan} aspect-[4/3] relative overflow-hidden rounded-lg`}
+                >
+                  <Image
+                    src={image || "/placeholder.svg"}
+                    alt={`${project.title} - Image ${index + 1}`}
+                    fill
+                    className="object-cover"
+                    sizes={`(max-width: 768px) 100vw, (max-width: 1200px) ${colSpan * 16.67}vw, ${colSpan * 16.67}vw`}
+                  />
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
