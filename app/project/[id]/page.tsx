@@ -26,12 +26,10 @@ const projects = [
       "Katya comprehensive brand identity design for a local coffee shop, including logo, color palette, and brand guidelines.",
     header: "Coping with the pandemic",
     subheader: "A brand identity design for a local coffee shop",
-    challenge:
-      "The client needed a complete brand refresh that would appeal to a younger demographic while maintaining their established customer base.",
-    solution:
-      "I developed a versatile identity system that balanced modern aesthetics with warm, inviting elements that reflected the shop's community-focused values.",
-    process:
-      "The process began with extensive research into the coffee industry and the local market. I conducted interviews with the owners and customers to understand their needs and preferences. After developing multiple concepts, we refined the chosen direction through several iterations before finalizing the brand system.",
+    paragraphs: [
+        "Paragraph One",
+        "Paragraph Two",
+    ]
   },
   {
     id: "packaging-design",
@@ -47,12 +45,10 @@ const projects = [
     ],
     description:
       "Innovative packaging design for an eco-friendly cosmetics line, focusing on sustainability and visual appeal.",
-    challenge:
-      "Create packaging that communicated the brand's commitment to sustainability while standing out in a crowded market.",
-    solution:
-      "Designed a packaging system using recycled and biodegradable materials with a minimalist aesthetic that highlighted the natural ingredients.",
-    process:
-      "The design process involved researching sustainable materials, creating multiple prototypes, and testing different printing techniques to achieve the desired look while minimizing environmental impact.",
+    paragraphs: [
+        "Paragraph One",
+        "Paragraph Two",
+    ]
   },
   {
     id: "editorial-design",
@@ -67,11 +63,10 @@ const projects = [
       "/placeholder.svg?height=800&width=1200",
     ],
     description: "Editorial design for a fashion magazine, featuring custom typography and dynamic layouts.",
-    challenge: "Redesign the magazine to increase reader engagement while maintaining its recognizable identity.",
-    solution:
-      "Created a flexible grid system that allowed for more dynamic layouts while developing a custom typeface that became a signature element of the publication.",
-    process:
-      "The redesign began with an audit of the existing publication and competitor analysis. I developed multiple concepts for the new direction, refined the chosen approach, and created comprehensive style guidelines for the editorial team.",
+    paragraphs: [
+        "Paragraph One",
+        "Paragraph Two",
+    ]
   },
   {
     id: "web-design",
@@ -87,11 +82,11 @@ const projects = [
     ],
     description:
       "User interface and experience design for an online clothing store, optimized for conversion and usability.",
-    challenge: "Design an e-commerce experience that simplified the shopping process and increased conversion rates.",
-    solution:
-      "Developed a clean, intuitive interface with streamlined navigation and checkout process, focusing on mobile-first design principles.",
-    process:
-      "The project began with user research and journey mapping. I created wireframes and prototypes that were tested with users, iterating based on feedback before finalizing the design system.",
+    paragraphs: [
+        "Paragraph One",
+        "Paragraph Two",
+        "Paragraph Three",
+    ]
   },
   {
     id: "poster-series",
@@ -107,12 +102,11 @@ const projects = [
     ],
     description:
       "A series of posters designed for a music festival, featuring vibrant colors and experimental typography.",
-    challenge:
-      "Create a cohesive series of posters that captured the energy of different music genres while maintaining a unified visual identity.",
-    solution:
-      "Developed a system that used color and typography to differentiate genres while maintaining consistent layout and structural elements.",
-    process:
-      "The design process involved exploring various typographic treatments and color palettes, creating multiple concepts, and refining the chosen direction to ensure each poster worked individually and as part of the series.",
+    paragraphs: [
+        "Paragraph One",
+        "Paragraph Two",
+        "Paragraph Three",
+    ]
   },
   {
     id: "mobile-app",
@@ -128,11 +122,11 @@ const projects = [
     ],
     description:
       "Mobile application design for a fitness tracking app, focusing on clean interfaces and intuitive navigation.",
-    challenge: "Design an app that made fitness tracking simple and motivating for users of all experience levels.",
-    solution:
-      "Created a clean, visually engaging interface with gamification elements to encourage consistent use and progress tracking.",
-    process:
-      "The design process included competitive analysis, user interviews, wireframing, and prototyping. Multiple iterations were tested with users to refine the experience before finalizing the design system.",
+    paragraphs: [
+        "Paragraph One",
+        "Paragraph Two",
+        "Paragraph Three, here's fitness!",
+    ]
   },
 ]
 
@@ -197,9 +191,11 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
             
             <p className="mb-3 italic">{project.subheader}</p>
             
-            <p className="text-gray-600 dark:text-gray-300 mt-8">{project.challenge}</p>
-            <p className="text-gray-600 dark:text-gray-300 mt-8">{project.challenge}</p>
-            <p className="text-gray-600 dark:text-gray-300 mt-8">{project.challenge}</p>
+            {project.paragraphs.map((challengeText, index) => (
+              <p key={index} className="text-gray-600 dark:text-gray-300 mt-8">
+                {challengeText}
+              </p>
+            ))}
 
           </div>
         </div>

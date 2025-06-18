@@ -1,3 +1,5 @@
+'use client'
+
 import ProjectCard from "@/components/project-card"
 
 // Sample project data - you would replace this with your actual projects
