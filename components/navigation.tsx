@@ -50,7 +50,7 @@ export default function Navigation() {
               download
               className="text-sm font-medium text-gray-500 dark:text-gray-400 transition-colors hover:text-black dark:hover:text-white"
             >
-              Resume
+              Résumé
             </a>
           </nav>
             {/* <Button
@@ -105,7 +105,7 @@ export default function Navigation() {
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-500 dark:text-gray-400"
               onClick={() => setIsMenuOpen(false)}
             >
-              Resume
+              Résumé
             </a>
           </div>
         </div>
