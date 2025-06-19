@@ -7,7 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "Your Name | Graphic Designer",
+  title: "Katya Hassett | Graphic Designer",
   description: "Portfolio of a graphic design graduate showcasing projects and skills",
     generator: 'v0.dev'
 }
@@ -25,7 +25,7 @@ export default function RootLayout({
           <main className="min-h-screen pt-16">{children}</main>
           <footer className="py-6 px-4 border-t border-gray-200 dark:border-gray-800">
             <div className="container mx-auto text-center text-sm text-gray-500 dark:text-gray-400">
-              © {new Date().getFullYear()} Your Name. All rights reserved.
+              © {new Date().getFullYear()} Katya Hassett. All rights reserved.
             </div>
           </footer>
         </ThemeProvider>

@@ -9,7 +9,7 @@ export default function AboutPage() {
         <div className="aspect-[3/4] relative overflow-hidden rounded-lg">
           <Image
             src="/placeholder.svg?height=800&width=600"
-            alt="Your Name - Portrait"
+            alt="Katya Hassett - Portrait"
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 50vw"
@@ -17,7 +17,7 @@ export default function AboutPage() {
         </div>
 
         <div>
-          <h2 className="text-2xl font-semibold mb-4">Hello, I'm Your Name</h2>
+          <h2 className="text-2xl font-semibold mb-4">Hello, I'm Katya</h2>
           <p className="text-gray-600 dark:text-gray-300 mb-6">
             I'm a graphic designer who recently graduated with a Bachelor of Fine Arts in Graphic Design. My passion
             lies in creating meaningful visual experiences that communicate effectively and leave a lasting impression.
