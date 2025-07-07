@@ -32,7 +32,7 @@ export default function Navigation() {
               <Link
                 key={item.path}
                 href={item.path}
-                className={`text-sm font-medium transition-colors hover:text-black dark:hover:text-white ${
+                className={`text-xs sm:text-sm md:text-base lg:text-lg font-medium transition-colors hover:text-black dark:hover:text-white ${
                   pathname === item.path ? "text-black dark:text-white" : "text-gray-500 dark:text-gray-400"
                 }`}
               >
@@ -45,7 +45,7 @@ export default function Navigation() {
             <a
               href="/resume.pdf"
               download
-              className="text-sm font-medium text-gray-500 dark:text-gray-400 transition-colors hover:text-black dark:hover:text-white"
+              className="text-xs sm:text-sm md:text-base lg:text-lg font-medium text-gray-500 dark:text-gray-400 transition-colors hover:text-black dark:hover:text-white"
             >
               Résumé
             </a>
@@ -88,7 +88,7 @@ export default function Navigation() {
               <Link
                 key={item.path}
                 href={item.path}
-                className={`block px-3 py-2 rounded-md text-base font-medium ${
+                className={`block px-3 py-2 rounded-md text-sm sm:text-base font-medium ${
                   pathname === item.path ? "text-black dark:text-white" : "text-gray-500 dark:text-gray-400"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
@@ -99,7 +99,7 @@ export default function Navigation() {
             <a
               href="/resume.pdf"
               download
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-500 dark:text-gray-400"
+              className="block px-3 py-2 rounded-md text-sm sm:text-base font-medium text-gray-500 dark:text-gray-400"
               onClick={() => setIsMenuOpen(false)}
             >
               Résumé

@@ -28,3 +28,5 @@ next-env.d.ts
 
 # WebStorm artifacts
 .idea
+
+**/.DS_Store

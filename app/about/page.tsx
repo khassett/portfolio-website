@@ -3,16 +3,6 @@ import Link from "next/link"
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-950 flex flex-col">
-      <nav className="w-full flex items-center justify-between px-8 py-6 border-b border-gray-200 dark:border-gray-800">
-        <div className="flex gap-8">
-          <Link href="/" className="text-lg font-medium text-gray-700 dark:text-gray-200 hover:text-black dark:hover:text-white">work</Link>
-          <Link href="/about" className="text-lg font-medium text-gray-700 dark:text-gray-200 hover:text-black dark:hover:text-white">about</Link>
-          <Link href="/contact" className="text-lg font-medium text-gray-700 dark:text-gray-200 hover:text-black dark:hover:text-white">contact</Link>
-        </div>
-        <div className="flex-1 flex justify-end">
-          <Link href="/resume.pdf" target="_blank" rel="noopener" className="text-lg font-medium text-gray-700 dark:text-gray-200 hover:text-black dark:hover:text-white">resume</Link>
-        </div>
-      </nav>
       <main className="container mx-auto px-4 py-12 flex-1">
         <h1 className="text-3xl md:text-4xl font-bold mb-8">About Me</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
