@@ -24,7 +24,7 @@ const projects = [
     id: "editorial-design",
     title: "Magazine Layout",
     category: "Editorial",
-    thumbnail: "/placeholder.svg?height=600&width=800",
+    thumbnail: "/branding/cover.png?height=600&width=800",
     description: "Editorial design for a fashion magazine, featuring custom typography and dynamic layouts.",
   },
   {
