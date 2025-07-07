@@ -19,14 +19,14 @@ export default function Home() {
         </h1>
         <div className="mt-16 w-full max-w-7xl">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {/* Row 1 */}
-            <img src="/placeholder.svg" alt="Placeholder" className="w-full aspect-square object-cover rounded-lg bg-gray-100" />
-            <img src="/placeholder.svg" alt="Placeholder" className="w-full aspect-square object-cover rounded-lg bg-gray-100" />
-            <img src="/placeholder.svg" alt="Placeholder" className="w-full aspect-square object-cover rounded-lg bg-gray-100" />
-            <img src="/placeholder.svg" alt="Placeholder" className="w-full aspect-square object-cover rounded-lg bg-gray-100" />
-            <img src="/placeholder.svg" alt="Placeholder" className="w-full aspect-square object-cover rounded-lg bg-gray-100" />
-            <img src="/placeholder.svg" alt="Placeholder" className="w-full aspect-square object-cover rounded-lg bg-gray-100" />
-            {/* Row 2 */}
+            {/* Row 1: Single image spanning all 6 columns */}
+            <img
+              src="/images/homepage/Nuts and Bolts.svg"
+              alt="Nuts and Bolts"
+              className="w-full object-contain rounded-lg bg-white col-span-1 sm:col-span-2 md:col-span-3 lg:col-span-6 max-h-[300px]"
+              style={{ height: 'auto' }}
+            />
+            {/* Row 2: 6 images, 1 per column */}
             <img src="/placeholder.svg" alt="Placeholder" className="w-full aspect-square object-cover rounded-lg bg-gray-100" />
             <img src="/placeholder.svg" alt="Placeholder" className="w-full aspect-square object-cover rounded-lg bg-gray-100" />
             <img src="/placeholder.svg" alt="Placeholder" className="w-full aspect-square object-cover rounded-lg bg-gray-100" />
