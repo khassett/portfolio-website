@@ -41,9 +41,6 @@ export default function Navigation() {
             ))}
           </nav>
 
-          <Link href="/" className="text-xl font-bold">
-            Katya Hassett
-          </Link>
           <nav>
             <a
               href="/resume.pdf"

@@ -148,101 +148,93 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
   }
 
   return (
-    <div className="container mx-auto px-4 py-12">
-      <Link href="/" className="inline-flex items-center mb-8">
-        <Button variant="ghost" className="gap-2">
-          <ArrowLeft className="h-4 w-4" />
-          Back to Projects
-        </Button>
-      </Link>
-
-      <div className="mb-8">
-        <h1 className="text-3xl md:text-4xl font-bold mb-2">{project.title}</h1>
-        <div className="flex flex-wrap gap-x-8 gap-y-2 text-gray-600 dark:text-gray-300">
-          <div>
-            <span className="font-medium">Category:</span> {project.category}
-          </div>
-          <div>
-            <span className="font-medium">Client:</span> {project.client}
-          </div>
-          <div>
-            <span className="font-medium">Year:</span> {project.year}
+    <div className="min-h-screen bg-white dark:bg-gray-950 flex flex-col">
+      <nav className="w-full flex items-center justify-between px-8 py-6 border-b border-gray-200 dark:border-gray-800">
+        <div className="flex gap-8">
+          <Link href="/" className="text-lg font-medium text-gray-700 dark:text-gray-200 hover:text-black dark:hover:text-white">work</Link>
+          <Link href="/about" className="text-lg font-medium text-gray-700 dark:text-gray-200 hover:text-black dark:hover:text-white">about</Link>
+          <Link href="/contact" className="text-lg font-medium text-gray-700 dark:text-gray-200 hover:text-black dark:hover:text-white">contact</Link>
+        </div>
+        <div className="flex-1 flex justify-end">
+          <Link href="/resume.pdf" target="_blank" rel="noopener" className="text-lg font-medium text-gray-700 dark:text-gray-200 hover:text-black dark:hover:text-white">resume</Link>
+        </div>
+      </nav>
+      <main className="container mx-auto px-4 py-12 flex-1">
+        <Link href="/" className="inline-flex items-center mb-8">
+          <Button variant="ghost" className="gap-2">
+            <ArrowLeft className="h-4 w-4" />
+            Back to Projects
+          </Button>
+        </Link>
+        <div className="mb-8">
+          <h1 className="text-3xl md:text-4xl font-bold mb-2">{project.title}</h1>
+          <div className="flex flex-wrap gap-x-8 gap-y-2 text-gray-600 dark:text-gray-300">
+            <div>
+              <span className="font-medium">Category:</span> {project.category}
+            </div>
+            <div>
+              <span className="font-medium">Client:</span> {project.client}
+            </div>
+            <div>
+              <span className="font-medium">Year:</span> {project.year}
+            </div>
           </div>
         </div>
-      </div>
-
-      <div className="mb-12">
-        <div className="aspect-[16/9] relative overflow-hidden rounded-lg mb-8">
-          <Image
-            src={project.thumbnail || "/placeholder.svg"}
-            alt={project.title}
-            fill
-            className="object-cover"
-            priority
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
-          />
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          <div className="md:col-span-1 px-6 md:px-[46px]">
-            <h1 className="text-xl font-semibold mt-6">DATE</h1>
-            <p className="text-gray-600 dark:text-gray-300">{project.year}</p>
-            
-            <h1 className="text-xl font-semibold mt-6">TOOLS</h1>
-            <p className="text-gray-600 dark:text-gray-300">
-              {project.tools}
-            </p>
-
-            <h1 className="text-xl font-semibold mt-6">DESCRIPTION</h1>
-            <p className="text-gray-600 dark:text-gray-300">{project.description}</p>
-          </div>
-          <div className="md:col-span-2">
-            <h1 className="text-xl font-semibold mb-3">{project.header}</h1>
-            
-            <p className="mb-3 italic">{project.subheader}</p>
-            
-            {project.paragraphs.map((challengeText, index) => (
-              <p key={index} className="text-gray-600 dark:text-gray-300 mt-8">
-                {challengeText}
-              </p>
-            ))}
-
-          </div>
-        </div>
-{/* 
         <div className="mb-12">
-          <h2 className="text-xl font-semibold mb-3">Solution</h2>
-          <p className="text-gray-600 dark:text-gray-300 mb-6">{project.solution}</p>
-
-          <h2 className="text-xl font-semibold mb-3">Process</h2>
-          <p className="text-gray-600 dark:text-gray-300">{project.process}</p>
-        </div> */}
-
-        <div>
-          {/* <h2 className="text-xl font-semibold mb-6">Project Gallery</h2> */}
-          <div className="grid grid-cols-1 md:grid-cols-6 gap-4">
-            {project.images.map((image, index) => {
-              // Get the column span for this image (default to 2 if not specified)
-              const colSpan = project.imageSpans?.[index] || 2;
-
-              return (
-                <div 
-                  key={index} 
-                  className={`col-span-1 md:col-span-${colSpan} aspect-[4/3] relative overflow-hidden rounded-lg`}
-                >
-                  <Image
-                    src={image || "/placeholder.svg"}
-                    alt={`${project.title} - Image ${index + 1}`}
-                    fill
-                    className="object-cover"
-                    sizes={`(max-width: 768px) 100vw, (max-width: 1200px) ${colSpan * 16.67}vw, ${colSpan * 16.67}vw`}
-                  />
-                </div>
-              );
-            })}
+          <div className="aspect-[16/9] relative overflow-hidden rounded-lg mb-8">
+            <Image
+              src={project.thumbnail || "/placeholder.svg"}
+              alt={project.title}
+              fill
+              className="object-cover"
+              priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
+            />
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="md:col-span-1 px-6 md:px-[46px]">
+              <h1 className="text-xl font-semibold mt-6">DATE</h1>
+              <p className="text-gray-600 dark:text-gray-300">{project.year}</p>
+              <h1 className="text-xl font-semibold mt-6">TOOLS</h1>
+              <p className="text-gray-600 dark:text-gray-300">
+                {project.tools}
+              </p>
+              <h1 className="text-xl font-semibold mt-6">DESCRIPTION</h1>
+              <p className="text-gray-600 dark:text-gray-300">{project.description}</p>
+            </div>
+            <div className="md:col-span-2">
+              <h1 className="text-xl font-semibold mb-3">{project.header}</h1>
+              <p className="mb-3 italic">{project.subheader}</p>
+              {project.paragraphs.map((challengeText, index) => (
+                <p key={index} className="text-gray-600 dark:text-gray-300 mt-8">
+                  {challengeText}
+                </p>
+              ))}
+            </div>
+          </div>
+          <div>
+            <div className="grid grid-cols-1 md:grid-cols-6 gap-4">
+              {project.images.map((image, index) => {
+                const colSpan = project.imageSpans?.[index] || 2;
+                return (
+                  <div 
+                    key={index} 
+                    className={`col-span-1 md:col-span-${colSpan} aspect-[4/3] relative overflow-hidden rounded-lg`}
+                  >
+                    <Image
+                      src={image || "/placeholder.svg"}
+                      alt={`${project.title} - Image ${index + 1}`}
+                      fill
+                      className="object-cover"
+                      sizes={`(max-width: 768px) 100vw, (max-width: 1200px) ${colSpan * 16.67}vw, ${colSpan * 16.67}vw`}
+                    />
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
-      </div>
+      </main>
     </div>
   )
 }

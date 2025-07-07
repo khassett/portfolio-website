@@ -2,8 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@font-face {
+  font-family: 'Scratch Storm';
+  src: url('/fonts/ScratchStorm.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Scratch Storm';
+  src: url('/fonts/ScratchStorm-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Scratch Storm', Arial, Helvetica, sans-serif;
 }
 
 @layer utilities {
