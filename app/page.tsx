@@ -29,11 +29,14 @@ export default function Home() {
                 />
               </Link>
             {/* Row 2: Single image spanning all 6 columns */}
-            <img
-              src="/images/homepage/RIP.svg"
-              alt="RIP"
-              className="w-full object-contain rounded-lg bg-transparent col-span-1 sm:col-span-2 md:col-span-3 lg:col-span-6 max-h-[600px] -mt-4 sm:-mt-6 md:-mt-8 lg:-mt-10"
-            />
+              <Link href="/project/RIP" className="col-span-1 sm:col-span-2 md:col-span-3 lg:col-span-6">
+                <img
+                  src="/images/homepage/Rip.svg"
+                  alt="RIP"
+                  className="w-full object-contain rounded-lg bg-transparent max-h-[600px] cursor-pointer"
+                  style={{ height: 'auto' }}
+                />
+              </Link>
           </div>
         </div>
       </main>
