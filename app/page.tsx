@@ -20,12 +20,14 @@ export default function Home() {
         <div className="mt-4 sm:mt-6 md:mt-7 lg:mt-8 w-full max-w-7xl">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {/* Row 1: Single image spanning all 6 columns */}
-            <img
-              src="/images/homepage/Nuts and Bolts.svg"
-              alt="Nuts and Bolts"
-              className="w-full object-contain rounded-lg bg-transparent col-span-1 sm:col-span-2 md:col-span-3 lg:col-span-6 max-h-[600px]"
-              style={{ height: 'auto' }}
-            />
+              <Link href="/project/nuts-and-bolts" className="col-span-1 sm:col-span-2 md:col-span-3 lg:col-span-6">
+                <img
+                  src="/images/homepage/Nuts and Bolts.svg"
+                  alt="Nuts and Bolts"
+                  className="w-full object-contain rounded-lg bg-transparent max-h-[600px] cursor-pointer"
+                  style={{ height: 'auto' }}
+                />
+              </Link>
             {/* Row 2: Single image spanning all 6 columns */}
             <img
               src="/images/homepage/RIP.svg"
